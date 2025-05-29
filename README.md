@@ -48,17 +48,14 @@ Proyek ini menggunakan pendekatan unsupervised learning dengan metode clustering
 **1. K-Means**
 
 K-Means adalah algoritma clustering yang membagi data ke dalam k kelompok berdasarkan kedekatan data terhadap pusat klaster (centroid). Algoritma ini dipilih karena sederhana, cepat, dan efisien untuk dataset berskala besar, sehingga algoritma ini cocok untuk digunakan dalam eksplorasi segmentasi pelanggan.
+
 **Parameter kunci :**
 - n_clusters: jumlah klaster yang ingin dibuat (dicoba dalam rentang 2–10).
-
 - init: metode inisialisasi centroid awal ('k-means++' digunakan untuk hasil yang lebih stabil).
-
 - n_init: jumlah inisialisasi ulang (default: 10).
-
 - max_iter: jumlah iterasi maksimum (default: 300).
-
 - random_state: untuk memastikan hasil yang konsisten.
-
+  
 **2. K-Medoid**
 
 K-Medoids adalah varian dari K-Means yang lebih tahan terhadap outlier karena pusat klasternya adalah titik data aktual (medoid), bukan rata-rata. Algoritma ini dipilih karena lebih robust terhadap outlier dan noise dibandingkan K-Means.
@@ -66,11 +63,8 @@ K-Medoids adalah varian dari K-Means yang lebih tahan terhadap outlier karena pu
 **Parameter Kunci:**
 
 - n_clusters: jumlah klaster yang ingin dibentuk.
-
 - init: metode pemilihan medoid awal ('k-medoids++').
-
 - metric: metode pengukuran jarak ('euclidean' digunakan).
-
 - max_iter: batas maksimum iterasi pertukaran medoid.
 
 **3. Penyeimbangan Data: SMOTE**
@@ -80,9 +74,7 @@ SMOTE (Synthetic Minority Over-sampling Technique) digunakan untuk mengatasi dis
 **Parameter Kunci SMOTE:**
 
 - sampling_strategy: proporsi kelas minoritas yang akan dibuat ('auto' digunakan).
-
 - k_neighbors: jumlah tetangga terdekat (default: 5).
-
 - random_state: untuk reproducibility hasil.
 
 **4. Evaluasi: Silhouette Score**
@@ -91,9 +83,7 @@ Silhouette Score digunakan untuk mengevaluasi kualitas hasil clustering. Skor in
 
 **Interpretasi Nilai Silhouette Score:**
 - Nilai mendekati 1: Klaster sangat baik dan terpisah jelas.
-
 - Nilai mendekati 0: Klaster tumpang tindih.
-
 - Nilai negatif: Data mungkin salah klaster.
   
 ---
