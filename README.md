@@ -35,10 +35,31 @@ Proyek ini bertujuan untuk membandingkan kinerja algoritma clustering K-Means da
 
 **Berikan instruksi langkah demi langkah bagaimana cara menjalankan kode atau proyek ini.**
 
-**Prasyarat**:
-- Software atau library apa saja yang perlu diinstal? (Contoh: Python 3.x, Jupyter Notebook, Pandas, Scikit-learn, TensorFlow, dll.)
-- Sertakan perintah untuk menginstal dependensi jika ada (misalnya, pip install -r requirements.txt).
+**Prasyarat Software dan Library**:
 
+1. Python 3.x (disarankan versi terbaru yang kompatibel dengan library yang digunakan)
+2. Library Python yang diperlukan:
+-  pandas (untuk manipulasi data)
+-  numpy (untuk komputasi numerik)
+-  scikit-learn (untuk algoritma K-Means, evaluasi Silhouette Score, dan preprocessing)
+-  imbalanced-learn (untuk SMOTE)
+-  matplotlib dan seaborn (untuk visualisasi)
+-  scipy (untuk perhitungan statistik dan distance metric)
+-  scikit-medoids (atau library lain yang menyediakan K-Medoids, jika digunakan)
+
+Instalasi Dependensi
+
+Jika tersedia file requirements.txt, jalankan perintah berikut di terminal atau command prompt:
+
+``
+pip install -r requirements.txt
+`
+
+Jika tidak ada file requirements.txt, Anda dapat menginstal library secara manual dengan perintah berikut:
+
+`
+pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn scipy scikit-medoids
+``
 **Struktur Folder (Opsional)**:
 - Jika relevan, jelaskan struktur direktori proyek.
 
