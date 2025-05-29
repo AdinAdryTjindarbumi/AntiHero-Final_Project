@@ -169,8 +169,10 @@ Berikut ini hasil visualisasi dari implementasi Algoritma K-Means dan K-Medoids 
 
 ![image](https://github.com/user-attachments/assets/99c5f5f4-91f8-44c5-9f71-eb202bcfc72e)
 
+![image](https://github.com/user-attachments/assets/8684ace0-ebbc-4240-9fac-5492222f2974)
+
+
 
 Berdasarkan hasil evaluasi SIlhouette Score menunjukkan algoritma K-Medoids memberikan hasil yang lebih baik dibandingkan dengan K-Means di semua data, baik data original maupun data setelah SMOTE. Penerapan SMOTE berhasil menyeimbangkan distribusi kelas, namun tidak selalu meningkatkan nilai Silhouette Score secara signifikan, sehingga perlu evaluasi lebih lanjut dalam konteks segmentasi pelanggan.
 
 
-**Contoh Teks Output:**
