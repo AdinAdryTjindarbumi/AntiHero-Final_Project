@@ -63,15 +63,46 @@ pip install pandas numpy scikit-learn imbalanced-learn matplotlib seaborn scipy 
 
 **Struktur Folder (Opsional)**:
 - Jika relevan, jelaskan struktur direktori proyek.
-
+  
 **Langkah-langkah Eksekusi**:
-1. [Langkah pertama, contoh: Clone repositori ini.]
-2. [Langkah kedua, contoh: Buka file nama_notebook.ipynb menggunakan Jupyter Notebook.]
-3. [Langkah ketiga, contoh: Jalankan semua sel kode secara berurutan.]
-4. [Langkah selanjutnya, jika ada.]
 
-**Konfigurasi (Opsional)**:
-- Apakah ada file konfigurasi yang perlu disesuaikan sebelum menjalankan kode?
+1. Clone repositori ini ke komputer Anda atau unduh seluruh file proyek.
+
+2. Persiapkan dataset "E-commerce Behavior Data from Multi-category Store" periode Oktober 2019 dari Kaggle, kemudian simpan file dataset tersebut ke dalam folder data/.
+
+3. Buka file notebook Jupyter atau skrip Python yang berisi proses preprocessing, SMOTE, clustering, dan evaluasi yang biasanya terdapat di folder notebooks/ atau src/.
+
+4. Lakukan preprocessing data, meliputi:
+Pembersihan data (penanganan missing values, filtering event_type, validasi tanggal dan harga).
+Deteksi dan penanganan outlier.
+Feature engineering (menghitung jumlah interaksi per pengguna, analisis RFM, perhitungan metrik perilaku seperti Conversion Rate dan Engagement Score).
+Transformasi data (log transformation pada fitur skewed, normalisasi Min-Max untuk K-Medoids, dan standardisasi Z-Score untuk K-Means).
+
+5. Terapkan teknik SMOTE untuk menyeimbangkan distribusi data interaksi pelanggan, khususnya untuk mengatasi dominasi interaksi jenis view, dengan parameter seperti:
+    -    sampling_strategy='auto'
+    -    k_neighbors=5
+    -    random_state=42
+
+6. Jalankan algoritma clustering:
+    -    K-Means dengan variasi jumlah cluster dari 2 hingga 10, menggunakan parameter seperti init='k-means++', ninit=10, maxiter=300, dan random_state=42.
+    -    K-Medoids menggunakan metode PAM dengan parameter serupa (jumlah cluster bervariasi, metric='euclidean', init='k-medoids++').
+
+7. Lakukan clustering pada dua kondisi data: data asli (tanpa SMOTE) dan data hasil augmentasi SMOTE.
+
+8. Evaluasi hasil clustering menggunakan Silhouette Score untuk setiap nilai k, serta analisis performa seperti waktu komputasi dan penggunaan memori.
+
+9. Visualisasikan hasil clustering menggunakan grafik scatter plot, histogram, box plot, dan visualisasi lain sesuai kebutuhan.
+
+10. Analisis klaster yang terbentuk berdasarkan karakteristik perilaku pengguna dan interpretasi hasil segmentasi.
+
+11. Buat laporan akhir yang mencakup kesimpulan, rekomendasi model terbaik, jumlah cluster optimal, serta panduan implementasi praktis.
+
+**Konfigurasi (Opsional)**
+
+    -    Sesuaikan path dataset di dalam kode agar sesuai dengan lokasi penyimpanan dataset lokal Anda.
+    -    Atur parameter SMOTE seperti samplingstrategy, kneighbors, dan random_state untuk reproducibility dan efektivitas oversampling.
+    -    Sesuaikan jumlah cluster (nclusters) dan parameter algoritma clustering (misalnya init, maxiter) sesuai kebutuhan eksperimen.
+    -    Pastikan kernel Python dan semua dependensi telah terpasang dengan benar jika menggunakan notebook Jupyter.
 
 ---
 
