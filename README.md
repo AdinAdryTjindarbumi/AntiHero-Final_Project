@@ -162,12 +162,15 @@ Transformasi data (log transformation pada fitur skewed, normalisasi Min-Max unt
 
 ---
 
-### Contoh Hasil Output dan Visualisasi
+### Hasil Output dan Visualisasi
+Berikut ini hasil visualisasi dari implementasi Algoritma K-Means dan K-Medoids pada data original maupun data setelah diterapkan SMOTE
 
-**Tampilkan beberapa contoh hasil output yang dihasilkan oleh kode Anda. Ini bisa berupa:**
+![output](https://github.com/user-attachments/assets/87166f60-90ac-470d-87ba-a2756164ddd9)
 
-- **Metrik Evaluasi**: (Contoh: Akurasi, Presisi, Recall, F1-score untuk klasifikasi; MAE, MSE, R-squared untuk regresi; Silhouette Score untuk clustering).
-- **Prediksi**: Contoh input dan output prediksi dari model.
-- **Visualisasi**: Sertakan gambar atau link ke visualisasi data atau hasil model (Contoh: grafik distribusi data, scatter plot, confusion matrix, learning curve, plot hasil clustering). Anda bisa menyertakan gambar langsung di README atau memberikan path ke file gambar.
+![image](https://github.com/user-attachments/assets/99c5f5f4-91f8-44c5-9f71-eb202bcfc72e)
+
+
+Berdasarkan hasil evaluasi SIlhouette Score menunjukkan algoritma K-Medoids memberikan hasil yang lebih baik dibandingkan dengan K-Means di semua data, baik data original maupun data setelah SMOTE. Penerapan SMOTE berhasil menyeimbangkan distribusi kelas, namun tidak selalu meningkatkan nilai Silhouette Score secara signifikan, sehingga perlu evaluasi lebih lanjut dalam konteks segmentasi pelanggan.
+
 
 **Contoh Teks Output:**
