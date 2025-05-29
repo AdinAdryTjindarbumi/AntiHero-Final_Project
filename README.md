@@ -12,10 +12,20 @@ Proyek ini bertujuan untuk membandingkan kinerja algoritma clustering K-Means da
 
 ### Penjelasan Dataset
 
-**Jelaskan dataset yang Anda gunakan dalam proyek ini. Informasi yang bisa dimasukkan antara lain:**
+Dataset yang digunakan dalam proyek ini adalah "E-commerce Behavior Data from Multi-category Store" yang diperoleh dari platform Kaggle (https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store). Dataset ini berisi data perilaku transaksi pelanggan pada toko daring multi kategori selama bulan Oktober 2019.
 
 - **Sumber Dataset**: Dari mana dataset ini diperoleh? (Contoh: Kaggle, data perusahaan, hasil survei sendiri, dll.)
-- **Deskripsi Fitur/Kolom**: Jelaskan arti dari masing-masing kolom atau fitur yang ada dalam dataset.
+- **Deskripsi Fitur/Kolom**:
+        -    event_time: Waktu kejadian interaksi dalam format UTC.
+        -    event_type: Jenis interaksi pelanggan, meliputi empat kategori yaitu view (melihat produk), cart (menambahkan ke keranjang), remove_from_cart (menghapus dari     keranjang), dan purchase (melakukan pembelian).
+        -    product_id: Identifikasi unik untuk setiap produk.
+        - category_id: Identifikasi kategori produk.
+        - category_code: Kode hierarki kategori produk yang menggambarkan struktur kategori.
+        - brand: Merek produk.
+        - price: Harga produk dalam satuan USD.
+        - user_id: Identifikasi unik pengguna.
+        - user_session: Identifikasi sesi pengguna selama berinteraksi dengan toko daring.
+
 - **Ukuran Dataset**: Berapa jumlah baris dan kolom?
 - **Tipe Data**: Apa saja tipe data yang ada pada setiap fitur (numerik, kategorikal, teks, dll.)?
 - **Informasi Tambahan**: Apakah ada hal khusus yang perlu diketahui mengenai dataset ini (misalnya, data yang hilang, ketidakseimbangan kelas, dll.)?
