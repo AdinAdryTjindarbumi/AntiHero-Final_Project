@@ -34,7 +34,6 @@ Tautan : https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-
 Dataset ini terdiri dari 4.2448.764 baris dengan 9 kolom.
 Dataset ini berukuran 5.67GB. Pastikan anda memiliki ruang penyimpanan yang cukup.
 
-- **Tipe Data**: Apa saja tipe data yang ada pada setiap fitur (numerik, kategorikal, teks, dll.)?
 **Informasi Tambahan**
 - Dataset ini bersifat real-world sehingga mengandung missing values, outlier, dan distribusi yang tidak seimbang.
 - Terdapat ketimpangan jumlah interaksi, di mana jenis view sangat dominan dibandingkan purchase.
