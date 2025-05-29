@@ -6,7 +6,7 @@
 
 ### Deskripsi Singkat Proyek dan Latar Belakang Masalah
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Proyek ini bertujuan untuk membandingkan kinerja algoritma clustering K-Means dan K-Medoids dalam segmentasi pelanggan berbasis perilaku transaksi pada data e-commerce menggunakan dataset "E-commerce Behavior Data from Multi-category Store" dari Kaggle. Dalam era digital dengan pertumbuhan pesat industri e-commerce, data perilaku pelanggan yang besar dan beragam memunculkan tantangan dalam memahami pola transaksi seperti melihat produk, menambahkan ke keranjang, dan melakukan pembelian. Segmentasi pelanggan penting untuk strategi pemasaran yang terpersonalisasi, namun data transaksi sering tidak seimbang, dengan interaksi tertentu seperti view yang sangat dominan dibandingkan interaksi lain. Untuk mengatasi hal ini, proyek ini menerapkan teknik SMOTE guna menyeimbangkan distribusi data sebelum melakukan clustering. Evaluasi hasil segmentasi menggunakan Silhouette Score dilakukan untuk menentukan algoritma mana yang lebih efektif dalam menghasilkan klaster pelanggan yang optimal berdasarkan perilaku transaksi.
 
 ---
 
