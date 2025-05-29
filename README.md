@@ -42,7 +42,6 @@ Dataset ini berukuran 5.67GB. Pastikan anda memiliki ruang penyimpanan yang cuku
 
 ### Algoritma yang Digunakan (K-Means dan K-Medoids)
 
-**Jenis Algoritma**
 Proyek ini menggunakan pendekatan unsupervised learning dengan metode clustering untuk melakukan segmentasi pelanggan berdasarkan perilaku transaksi mereka. Dalam proyek ini menggunakan algoritma K-Means dan K-Medoid
 
 **1. K-Means**
