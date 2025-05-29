@@ -1,44 +1,102 @@
-# 📊 Dokumentasi Utama Proyek
-
-## Perbandingan Kinerja Algoritma K-Means dan K-Medoids dengan SMOTE dalam Segmentasi Pelanggan Berbasis Perilaku Transaksi
+# 📊 Perbandingan Kinerja Algoritma K-Means dan K-Medoids dengan SMOTE dalam Segmentasi Pelanggan Berbasis Perilaku Transaksi
 
 ---
 
 ### Deskripsi Singkat Proyek dan Latar Belakang Masalah
 
-Proyek ini bertujuan untuk membandingkan kinerja algoritma clustering K-Means dan K-Medoids dalam segmentasi pelanggan berbasis perilaku transaksi pada data e-commerce menggunakan dataset "E-commerce Behavior Data from Multi-category Store" dari Kaggle. Dalam era digital dengan pertumbuhan pesat industri e-commerce, data perilaku pelanggan yang besar dan beragam memunculkan tantangan dalam memahami pola transaksi seperti melihat produk, menambahkan ke keranjang, dan melakukan pembelian. Segmentasi pelanggan penting untuk strategi pemasaran yang terpersonalisasi, namun data transaksi sering tidak seimbang, dengan interaksi tertentu seperti view yang sangat dominan dibandingkan interaksi lain. Untuk mengatasi hal ini, proyek ini menerapkan teknik SMOTE guna menyeimbangkan distribusi data sebelum melakukan clustering. Evaluasi hasil segmentasi menggunakan Silhouette Score dilakukan untuk menentukan algoritma mana yang lebih efektif dalam menghasilkan klaster pelanggan yang optimal berdasarkan perilaku transaksi.
+Proyek ini bertujuan untuk membandingkan kinerja algoritma clustering K-Means dan K-Medoids dalam segmentasi pelanggan berbasis perilaku transaksi pada data e-commerce menggunakan dataset "E-commerce Behavior Data from Multi-category Store" dari Kaggle. 
+
+Dalam era digital dengan pertumbuhan pesat industri e-commerce, data perilaku pelanggan yang besar dan beragam memunculkan tantangan dalam memahami pola transaksi seperti melihat produk, menambahkan ke keranjang, dan melakukan pembelian. Segmentasi pelanggan penting untuk strategi pemasaran yang terpersonalisasi, namun data transaksi sering tidak seimbang, dengan interaksi tertentu seperti view yang sangat dominan dibandingkan interaksi lain. Untuk mengatasi hal ini, proyek ini menerapkan teknik SMOTE guna menyeimbangkan distribusi data sebelum melakukan clustering. Evaluasi hasil segmentasi menggunakan Silhouette Score dilakukan untuk menentukan algoritma mana yang lebih efektif dalam menghasilkan klaster pelanggan yang optimal berdasarkan perilaku transaksi.
 
 ---
 
-### Penjelasan Dataset
+### Dataset
 
-Dataset yang digunakan dalam proyek ini adalah "E-commerce Behavior Data from Multi-category Store" yang diperoleh dari platform Kaggle (https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store). Dataset ini berisi data perilaku transaksi pelanggan pada toko daring multi kategori selama bulan Oktober 2019.
+Dataset yang digunakan dalam proyek ini adalah "E-commerce Behavior Data from Multi-category Store" yang diperoleh dari platform Kaggle. Dataset ini berisi lebih dari 4 juta interaksi pengguna di platform e-commerce multi kategori selama bulan Oktober 2019. Setiap baris data mewakili satu interaksi pelanggan, seperti melihat produk, menambahkan ke keranjang, atau melakukan pembelian.
 
-- **Sumber Dataset**: Dari mana dataset ini diperoleh? (Contoh: Kaggle, data perusahaan, hasil survei sendiri, dll.)
-- **Deskripsi Fitur/Kolom**:
-        -    event_time: Waktu kejadian interaksi dalam format UTC.
-        -    event_type: Jenis interaksi pelanggan, meliputi empat kategori yaitu view (melihat produk), cart (menambahkan ke keranjang), remove_from_cart (menghapus dari     keranjang), dan purchase (melakukan pembelian).
-        -    product_id: Identifikasi unik untuk setiap produk.
-        - category_id: Identifikasi kategori produk.
-        - category_code: Kode hierarki kategori produk yang menggambarkan struktur kategori.
-        - brand: Merek produk.
-        - price: Harga produk dalam satuan USD.
-        - user_id: Identifikasi unik pengguna.
-        - user_session: Identifikasi sesi pengguna selama berinteraksi dengan toko daring.
+Tautan : https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store. 
 
-- **Ukuran Dataset**: Berapa jumlah baris dan kolom?
+**Deskripsi Fitur Dataset:**
+| Fitur            | Deskripsi                                                                 | Tipe Data   |
+|------------------|---------------------------------------------------------------------------|-------------|
+| `event_time`     | Waktu interaksi dalam format UTC                                          | datetime    |
+| `event_type`     | Jenis interaksi: view, cart, remove_from_cart, purchase                   | string      |
+| `product_id`     | ID unik untuk produk                                                      | integer     |
+| `category_id`    | ID kategori produk                                                        | float       |
+| `category_code`  | Kode hierarki kategori, seperti electronics.smartphone                   | string      |
+| `brand`          | Nama merek produk                                                         | string      |
+| `price`          | Harga produk dalam USD                                                    | float       |
+| `user_id`        | ID unik pengguna                                                          | integer     |
+| `user_session`   | ID sesi unik pengguna saat berinteraksi                                   | string      |
+
+
+**Ukuran Dataset**
+Dataset ini terdiri dari 4.2448.764 baris dengan 9 kolom.
+Dataset ini berukuran 5.67GB. Pastikan anda memiliki ruang penyimpanan yang cukup.
+
 - **Tipe Data**: Apa saja tipe data yang ada pada setiap fitur (numerik, kategorikal, teks, dll.)?
-- **Informasi Tambahan**: Apakah ada hal khusus yang perlu diketahui mengenai dataset ini (misalnya, data yang hilang, ketidakseimbangan kelas, dll.)?
+**Informasi Tambahan**
+- Dataset ini bersifat real-world sehingga mengandung missing values, outlier, dan distribusi yang tidak seimbang.
+- Terdapat ketimpangan jumlah interaksi, di mana jenis view sangat dominan dibandingkan purchase.
 
 ---
 
 ### Algoritma yang Digunakan (K-Means dan K-Medoids)
 
-- **Jenis Algoritma**: Apakah ini masalah klasifikasi, regresi, atau clustering?
-- **Nama Algoritma**: Sebutkan nama algoritma yang digunakan (Contoh: Logistic Regression, K-Means, Support Vector Machine, Decision Tree, Neural Network, dll.).
-- **Alasan Pemilihan**: Mengapa Anda memilih algoritma tersebut untuk menyelesaikan masalah ini? Apa kelebihan algoritma tersebut dalam konteks proyek Anda?
-- **Parameter Penting (Opsional)**: Jika ada, sebutkan parameter-parameter kunci dari algoritma yang Anda tuning atau gunakan dengan nilai spesifik.
+**Jenis Algoritma**
+Proyek ini menggunakan pendekatan unsupervised learning dengan metode clustering untuk melakukan segmentasi pelanggan berdasarkan perilaku transaksi mereka. Dalam proyek ini menggunakan algoritma K-Means dan K-Medoid
 
+**1. K-Means**
+
+K-Means adalah algoritma clustering yang membagi data ke dalam k kelompok berdasarkan kedekatan data terhadap pusat klaster (centroid). Algoritma ini dipilih karena sederhana, cepat, dan efisien untuk dataset berskala besar, sehingga algoritma ini cocok untuk digunakan dalam eksplorasi segmentasi pelanggan.
+**Parameter kunci :**
+- n_clusters: jumlah klaster yang ingin dibuat (dicoba dalam rentang 2–10).
+
+- init: metode inisialisasi centroid awal ('k-means++' digunakan untuk hasil yang lebih stabil).
+
+- n_init: jumlah inisialisasi ulang (default: 10).
+
+- max_iter: jumlah iterasi maksimum (default: 300).
+
+- random_state: untuk memastikan hasil yang konsisten.
+
+**2. K-Medoid**
+
+K-Medoids adalah varian dari K-Means yang lebih tahan terhadap outlier karena pusat klasternya adalah titik data aktual (medoid), bukan rata-rata. Algoritma ini dipilih karena lebih robust terhadap outlier dan noise dibandingkan K-Means.
+
+**Parameter Kunci:**
+
+- n_clusters: jumlah klaster yang ingin dibentuk.
+
+- init: metode pemilihan medoid awal ('k-medoids++').
+
+- metric: metode pengukuran jarak ('euclidean' digunakan).
+
+- max_iter: batas maksimum iterasi pertukaran medoid.
+
+**3. Penyeimbangan Data: SMOTE**
+
+SMOTE (Synthetic Minority Over-sampling Technique) digunakan untuk mengatasi distribusi data yang tidak seimbang, terutama ketika interaksi seperti view jauh lebih dominan dibandingkan purchase. Metode ini digunakan untuk membantu algoritma clustering agar tidak bias terhadap kelas mayoritas serta eningkatkan representasi segmen pelanggan minoritas (misalnya pembeli aktif).
+
+**Parameter Kunci SMOTE:**
+
+- sampling_strategy: proporsi kelas minoritas yang akan dibuat ('auto' digunakan).
+
+- k_neighbors: jumlah tetangga terdekat (default: 5).
+
+- random_state: untuk reproducibility hasil.
+
+**4. Evaluasi: Silhouette Score**
+
+Silhouette Score digunakan untuk mengevaluasi kualitas hasil clustering. Skor ini mengukur seberapa dekat setiap titik ke klasternya sendiri dibandingkan dengan klaster terdekat lainnya.
+
+**Interpretasi Nilai Silhouette Score:**
+- Nilai mendekati 1: Klaster sangat baik dan terpisah jelas.
+
+- Nilai mendekati 0: Klaster tumpang tindih.
+
+- Nilai negatif: Data mungkin salah klaster.
+  
 ---
 
 ### Panduan Menjalankan Kode
