@@ -1,4 +1,4 @@
-# 📊 Perbandingan Kinerja Algoritma K-Means dan K-Medoids dengan SMOTE dalam Segmentasi Pelanggan Berbasis Perilaku Transaksi
+# 📊 Perbandingan Kinerja Algoritma K-Means dan K-Medoids dalam Segmentasi Pelanggan Berbasis Perilaku Transaksi
 
 ---
 
@@ -66,16 +66,6 @@ K-Medoids adalah varian dari K-Means yang lebih tahan terhadap outlier karena pu
 - metric: metode pengukuran jarak ('euclidean' digunakan).
 - max_iter: batas maksimum iterasi pertukaran medoid.
 
-**3. Penyeimbangan Data: SMOTE**
-
-SMOTE (Synthetic Minority Over-sampling Technique) digunakan untuk mengatasi distribusi data yang tidak seimbang, terutama ketika interaksi seperti view jauh lebih dominan dibandingkan purchase. Metode ini digunakan untuk membantu algoritma clustering agar tidak bias terhadap kelas mayoritas serta eningkatkan representasi segmen pelanggan minoritas (misalnya pembeli aktif).
-
-**Parameter Kunci SMOTE:**
-
-- sampling_strategy: proporsi kelas minoritas yang akan dibuat ('auto' digunakan).
-- k_neighbors: jumlah tetangga terdekat (default: 5).
-- random_state: untuk reproducibility hasil.
-
 **4. Evaluasi: Silhouette Score**
 
 Silhouette Score digunakan untuk mengevaluasi kualitas hasil clustering. Skor ini mengukur seberapa dekat setiap titik ke klasternya sendiri dibandingkan dengan klaster terdekat lainnya.
@@ -134,24 +124,19 @@ Deteksi dan penanganan outlier.
 Feature engineering (menghitung jumlah interaksi per pengguna, analisis RFM, perhitungan metrik perilaku seperti Conversion Rate dan Engagement Score).
 Transformasi data (log transformation pada fitur skewed, normalisasi Min-Max untuk K-Medoids, dan standardisasi Z-Score untuk K-Means).
 
-5. Terapkan teknik SMOTE untuk menyeimbangkan distribusi data interaksi pelanggan, khususnya untuk mengatasi dominasi interaksi jenis view, dengan parameter seperti:
-    -    sampling_strategy='auto'
-    -    k_neighbors=5
-    -    random_state=42
-
-6. Jalankan algoritma clustering:
+5. Jalankan algoritma clustering:
     -    K-Means dengan variasi jumlah cluster dari 2 hingga 10, menggunakan parameter seperti init='k-means++', ninit=10, maxiter=300, dan random_state=42.
     -    K-Medoids menggunakan metode PAM dengan parameter serupa (jumlah cluster bervariasi, metric='euclidean', init='k-medoids++').
 
-7. Lakukan clustering pada dua kondisi data: data asli (tanpa SMOTE) dan data hasil augmentasi SMOTE.
+6. Lakukan clustering pada dataset.
 
-8. Evaluasi hasil clustering menggunakan Silhouette Score untuk setiap nilai k, serta analisis performa seperti waktu komputasi dan penggunaan memori.
+7. Evaluasi hasil clustering menggunakan Silhouette Score untuk setiap nilai k, serta analisis performa seperti waktu komputasi dan penggunaan memori.
 
-9. Visualisasikan hasil clustering menggunakan grafik scatter plot, histogram, box plot, dan visualisasi lain sesuai kebutuhan.
+8. Visualisasikan hasil clustering menggunakan grafik scatter plot, histogram, box plot, dan visualisasi lain sesuai kebutuhan.
 
-10. Analisis klaster yang terbentuk berdasarkan karakteristik perilaku pengguna dan interpretasi hasil segmentasi.
+9. Analisis klaster yang terbentuk berdasarkan karakteristik perilaku pengguna dan interpretasi hasil segmentasi.
 
-11. Buat laporan akhir yang mencakup kesimpulan, rekomendasi model terbaik, jumlah cluster optimal, serta panduan implementasi praktis.
+10. Buat laporan akhir yang mencakup kesimpulan, rekomendasi model terbaik, jumlah cluster optimal, serta panduan implementasi praktis.
 
 **Konfigurasi (Opsional)**
 
